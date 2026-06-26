@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
@@ -15,7 +16,7 @@ const upload = multer({ dest: 'uploads/' });
 // Initialize the Groq LLM Connection
 // Replace the text below with your real API key!
 const model = new ChatGroq({
-  apiKey:"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",
+  apiKey: process.env.GROQ_API_KEY,
   modelName: "llama3-8b-8192",
   temperature: 0
 });
